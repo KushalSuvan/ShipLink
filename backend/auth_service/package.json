@@ -1,0 +1,16 @@
+{
+  "name": "auth_service",
+  "version": "1.0.0",
+  "description": "Authentication Service for project ShipLink",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "format": "prettier --write . --log-level silent"
+  },
+  "author": "KushalSuvan",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3"
+  }
+}
