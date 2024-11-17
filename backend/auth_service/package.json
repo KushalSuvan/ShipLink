@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "format": "prettier --write . --log-level silent"
+    "format": "prettier --write . --log-level silent",
+    "build": "tsc -p ."
   },
   "author": "KushalSuvan",
   "license": "ISC",
