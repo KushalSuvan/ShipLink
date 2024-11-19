@@ -1,7 +1,18 @@
-import AWS from 'aws-sdk';
+import { DynamoDBClient, ListTablesCommand } from '@aws-sdk/client-dynamodb';
 
-const dynamoDb = new AWS.DynamoDB.DocumentClient({
-    region: process.env.AWS_REGION,
-});
+const dynamoDb = new DynamoDBClient({});
 
-export { dynamoDb };
+const connectDb = async () => {
+    const command = new ListTablesCommand({});
+    try {
+        const result = await dynamoDb.send(command)
+        console.log(`🌏 DynamoDB connected`)
+        // console.log(result);
+        
+    } catch (e) {
+        console.log('❌ Failed to connect to DynamoDB')
+        console.error(e)
+    }
+}
+
+export { dynamoDb, connectDb };
