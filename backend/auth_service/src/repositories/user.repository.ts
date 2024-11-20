@@ -22,10 +22,10 @@ export class UserRepository implements IUserRepository {
     try {
       const response = await docClient.send(command);
 
-      console.log('✅ User created succesfully');
+      console.log('✅  User created succesfully');
       return response;
     } catch (e) {
-      console.log(`⚠️ ERROR: Repository couldn't create user`);
+      console.log(`⚠️  ERROR: Repository couldn't create user`);
       console.log(e);
       console.log();
 

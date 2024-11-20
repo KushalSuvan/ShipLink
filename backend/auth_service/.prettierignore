@@ -31,5 +31,9 @@ yarn.lock
 # Ignore all JSON files except those needed for Prettier configuration
 !prettier*.json
 
+# Ignore Docker files
+Dockerfile
+.dockerfile
+
 # Ignore miscellaneous
 .DS_Store
