@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon -r dotenv/config src/index.ts",
+    "start": "tsc -p . && node dist/src/index.js",
     "test": "jest",
     "format": "prettier --write . --log-level silent",
     "build": "tsc -p ."
