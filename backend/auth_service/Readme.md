@@ -85,5 +85,6 @@ or
 yarn dev
 ```
 
-The server will be accessible at 
+The server will be accessible at `http://localhost:<PORT>` (default: `http://localhost:8000`).
+
 
