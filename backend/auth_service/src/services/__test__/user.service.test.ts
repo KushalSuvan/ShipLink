@@ -1,6 +1,11 @@
 describe('userService', () => {
-  test('example test', () => {
-    const a = 10;
-    expect(a).toBe(10);
+  beforeEach(() => {});
+
+  describe('createUser', () => {
+    test('should create user', () => {});
+
+    test('Retrieves User from UserId', () => {});
   });
+
+  afterEach(() => {});
 });

@@ -1,6 +1,8 @@
 import { DynamoDBClient, ListTablesCommand } from '@aws-sdk/client-dynamodb';
+import { DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
 
 const dynamoDb = new DynamoDBClient({});
+const docClient = DynamoDBDocumentClient.from(dynamoDb);
 
 const connectDb = async () => {
     const command = new ListTablesCommand({});
@@ -15,4 +17,4 @@ const connectDb = async () => {
     }
 }
 
-export { dynamoDb, connectDb };
+export { dynamoDb, docClient, connectDb };
