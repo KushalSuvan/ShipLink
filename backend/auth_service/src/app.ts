@@ -1,13 +1,17 @@
 import express, { Request, Response, NextFunction } from 'express';
-
+import { default as authRouter } from './routes/auth.route';
 const app = express();
 
-app.get("/", (_:Request, res: Response, next: NextFunction) => {
-    res.json({
-        response: "Hello, Vatar"
-    })
+app.use('/auth', authRouter);
 
-    next()
-})
+app.get('/', (_: Request, res: Response, next: NextFunction) => {
+  res.json({
+    response: 'Hello, Vatar',
+  });
+
+  next();
+});
+
+app.on('uncaughtException', (e) => console.error(e));
 
 export default app;
