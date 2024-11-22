@@ -28,7 +28,7 @@ COPY --from=build /app/node_modules /app/node_modules
 COPY package*.json ./
 
 # Expose the port your Express app will run on
-EXPOSE 8000
+EXPOSE 80
 
 # Step 7: Set the command to start the app (from the dist folder)
 CMD ["npm", "start"]

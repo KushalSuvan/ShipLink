@@ -3,11 +3,12 @@ import { User } from '../models/user.model';
 import { dynamoDb, docClient } from '../db';
 import { ListTablesCommand } from '@aws-sdk/client-dynamodb';
 import { UpdateCommand } from '@aws-sdk/lib-dynamodb';
+import { TABLE_NAME } from '../constants';
 
 export class UserRepository implements IUserRepository {
   async create(data: User): Promise<any> {
     const command = new UpdateCommand({
-      TableName: 'UserTable',
+      TableName: TABLE_NAME,
       Key: {
         merchantId: data.merchantId + '',
       },
