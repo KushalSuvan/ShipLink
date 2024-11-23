@@ -1,1 +1,1 @@
-export const TABLE_NAME = 'ShipmentTable';
+export const DB_NAME = 'shipping-db';

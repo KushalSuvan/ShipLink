@@ -1,20 +1,17 @@
-import { DynamoDBClient, ListTablesCommand } from '@aws-sdk/client-dynamodb';
-import { DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
-
-const dynamoDb = new DynamoDBClient({});
-const docClient = DynamoDBDocumentClient.from(dynamoDb);
+import mongoose from 'mongoose';
+import { DB_NAME } from '../constants';
 
 const connectDb = async () => {
-    const command = new ListTablesCommand({});
     try {
-        const result = await dynamoDb.send(command)
-        console.log(`🌏  DynamoDB connected`)
-        console.log(result);
+        const connection = await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`);
+        console.log(`🌏  MongoDB connected`)
         
     } catch (e) {
-        console.log(`❌  Failed to connect to DynamoDB`)
+        console.log(`❌  Failed to connect to MongoDB`)
         console.error(e)
+
+        throw(e)
     }
 }
 
-export { dynamoDb, docClient, connectDb };
+export { connectDb };

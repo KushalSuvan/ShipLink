@@ -19,20 +19,36 @@ router.get('/', async (req: Request, res: Response, next: NextFunction) => {
 });
 
 router.post('/', async (req: Request, res: Response, next: NextFunction) => {
-  const { merchantId, accessToken, refreshToken } = req.body;
+  const {
+    objectId,
+    pickupAddress,
+    deliveryAddress,
+    pickupDate,
+    deliveryDate,
+    carrier,
+  } = req.body;
 
-  if (!(merchantId && accessToken && refreshToken)) {
+  if (
+    !(
+      objectId &&
+      pickupAddress &&
+      deliveryAddress &&
+      pickupDate &&
+      deliveryDate &&
+      carrier
+    )
+  ) {
     res.status(400).json({
-      error: `Required ${!merchantId ? 'merchantId' : ''}${!accessToken ? ', accessToken, ' : ''}${!refreshToken ? ', refreshToken' : ''}`,
+      error: `Required ${!objectId ? 'objectId' : ''}${!pickupAddress ? ', pickupAddress, ' : ''}${!deliveryDate ? ', deliveryDate' : ''}`,
     });
 
     return;
   }
 
   const shipping: Shipping = {
-    merchantId: merchantId,
-    accessToken: accessToken,
-    refreshToken: refreshToken,
+    merchantId: '',
+    accessToken: '',
+    refreshToken: '',
   };
 
   try {

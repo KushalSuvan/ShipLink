@@ -5,3 +5,9 @@ export class Shipping {
     public readonly refreshToken: string,
   ) {}
 }
+
+import mongoose, { Schema } from 'mongoose';
+
+const shipmentSchema = new Schema({});
+
+export const Shipment = mongoose.model("Shipment", shipmentSchema);
