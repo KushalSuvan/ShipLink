@@ -1,7 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express';
 import { TemplateService } from '../services/template.service';
 import { TemplateRepository } from '../repositories/template.repository';
-import { Template } from '../models/template.model';
+import { ITemplate } from '../interfaces/template.interface';
 import bodyParser from 'body-parser';
 
 const service = new TemplateService(new TemplateRepository());
@@ -29,18 +29,7 @@ router.post('/', async (req: Request, res: Response, next: NextFunction) => {
     return;
   }
 
-  const template: Template = {
-    merchantId: merchantId,
-    accessToken: accessToken,
-    refreshToken: refreshToken,
-  };
-
   try {
-    const response = await service.createTemplate(template);
-
-    res.status(200).json({
-      updates: await response,
-    });
   } catch (e) {
     console.error("ERROR: Couldn't create template");
     console.error(e);
@@ -62,18 +51,7 @@ router.post(
       return;
     }
 
-    const template: Template = {
-      merchantId: merchantId,
-      accessToken: accessToken,
-      refreshToken: refreshToken,
-    };
-
     try {
-      const response = await service.createTemplate(template);
-
-      res.status(200).json({
-        updates: await response,
-      });
     } catch (e) {
       console.error("ERROR: Couldn't create user");
       console.error(e);
@@ -82,5 +60,7 @@ router.post(
     }
   },
 );
+
+router.post('/').use(() => {});
 
 export default router;

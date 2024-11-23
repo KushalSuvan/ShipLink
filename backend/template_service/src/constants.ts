@@ -1,1 +1,1 @@
-export const TABLE_NAME = 'TemplateTable';
+export const DB_NAME = 'template-db';

@@ -1,9 +1,9 @@
-import { Template } from '../models/template.model';
+import { ITemplate } from '../interfaces/template.interface';
 
 export interface ITemplateRepository {
-  create(data: Template): Promise<Template>;
-  update(data: Template): Promise<Template>;
+  create(data: ITemplate): Promise<ITemplate>;
+  update(data: ITemplate): Promise<ITemplate>;
   delete(id: String): Promise<{}>;
-  find(): Promise<Template[]>;
-  findOne(id: String): Promise<Template>;
+  find(): Promise<ITemplate[]>;
+  findOne(id: String): Promise<ITemplate>;
 }
