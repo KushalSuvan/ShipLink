@@ -25,7 +25,6 @@ const templateSchema = new Schema<ITemplate>({
   productDescription: { type: String, required: true },
   declaredValue: { type: Number, required: true },
   currency: { type: String, required: true },
-  category: { type: String, required: true },
   packingType: {
     type: String,
     required: true,
@@ -35,11 +34,12 @@ const templateSchema = new Schema<ITemplate>({
     required: true,
   },
   carrier: String,
-  insurance: Boolean,
   other: {
     fragile: Boolean,
     hazardous: Boolean,
     humidity: Boolean,
+    perishable: Boolean,
+    biohazard: Boolean,
     oversized: Boolean,
   },
 });

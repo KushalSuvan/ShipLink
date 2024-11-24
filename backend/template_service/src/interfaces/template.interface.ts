@@ -33,6 +33,8 @@ type MiscellaneousRequirements = {
   fragile: Boolean;
   hazardous: Boolean;
   humidity: Boolean;
+  perishable: Boolean;
+  biohazard: Boolean;
   oversized: Boolean;
 };
 
@@ -50,11 +52,9 @@ interface ITemplate {
   productDescription: String;
   declaredValue: Number;
   currency: String;
-  category: String;
   packingType: String;
   temperatureControl: String;
   carrier: String;
-  insurance: Boolean;
   other: MiscellaneousRequirements;
 }
 

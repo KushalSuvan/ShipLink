@@ -23,6 +23,7 @@ FROM node:18-alpine AS production
 WORKDIR /app
 
 # Step 6: Copy only the necessary files from the build stage
+COPY --from=build /app/public /app/public
 COPY --from=build /app/dist /app/dist
 COPY --from=build /app/node_modules /app/node_modules
 COPY package*.json ./
