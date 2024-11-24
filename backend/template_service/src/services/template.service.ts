@@ -1,5 +1,5 @@
 import { ITemplateRepository } from '../interfaces/templateRepository.interface';
-import { Template } from '../models/template.model';
+import { ITemplate } from '../interfaces/template.interface';
 
 export class TemplateService {
   private _repository: ITemplateRepository;
@@ -8,7 +8,7 @@ export class TemplateService {
     this._repository = repository;
   }
 
-  async createTemplate(input: Template) {
+  async createTemplate(input: ITemplate) {
     return await this._repository.create(input);
   }
 

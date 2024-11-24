@@ -1,15 +1,24 @@
-import express, { Request, Response, NextFunction } from 'express';
-import { default as authRouter } from './routes/template.route';
+import express, { response } from 'express';
+import cookieParser from 'cookie-parser';
+import cors from 'cors';
+import templateRouter from './routes/template.route';
+
 const app = express();
 
-app.use('/template', authRouter);
+app.use(
+  cors({
+    origin: '*',
+  }),
+);
 
-app.get('/', (_: Request, res: Response, next: NextFunction) => {
-  res.json({
-    response: 'Hello, Vatar',
-  });
+app.use(express.json({ limit: '16kb' }));
+app.use(express.urlencoded({ extended: true, limit: '16kb' }));
+app.use(express.static('public'));
+app.use(cookieParser());
 
-  next();
+app.use('/api/v1/template', templateRouter);
+app.all('/', (_, res) => {
+  res.json({ response: 'Welcome to ShipLink Shipping API' });
 });
 
 app.on('uncaughtException', (e) => console.error(e));

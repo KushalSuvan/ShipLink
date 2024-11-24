@@ -15,6 +15,9 @@ node_modules/
 # Ignore coverage output
 coverage/
 
+# Ignore TypeScript config files
+tsconfig.json
+
 # Ignore compiled TypeScript files
 *.js
 *.js.map
