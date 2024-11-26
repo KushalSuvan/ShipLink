@@ -286,8 +286,18 @@ app.get('/api/getAllShiplink', async (req, res) => {
     try {
         // Fetch all Shiplink objects from the collection
         const shiplinkObjects = await CreateShiplinkObject.find({});
-
+        console.log("🔰  Fetched ShipLink objects")
+        console.log(shiplinkObjects)
         // Return the retrieved data as JSON
+        const jayson = {
+            message: 'Shiplink objects retrieved successfully',
+            data: shiplinkObjects
+        }
+
+        console.log('✅  Here is the JSON');
+        console.log(jayson);
+
+        
         res.status(200).json({
             message: 'Shiplink objects retrieved successfully',
             data: shiplinkObjects
