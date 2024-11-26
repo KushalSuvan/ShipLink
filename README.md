@@ -1,4 +1,4 @@
-# ShipLink = 
+# ShipLink
 
 ShipLink is a community-driven shipping platform that empowers e-commerce sellers to effortlessly manage cross-border logistics. Built with input and feedback from a global community of sellers, ShipLink is designed to address real-world challenges in international shipping. Through seamless integration with trusted carriers, automated customs management, and end-to-end tracking, ShipLink simplifies the entire shipping process.
 
