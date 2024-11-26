@@ -1,50 +1,76 @@
-# React + TypeScript + Vite
+# ShipLink = 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ShipLink is a community-driven shipping platform that empowers e-commerce sellers to effortlessly manage cross-border logistics. Built with input and feedback from a global community of sellers, ShipLink is designed to address real-world challenges in international shipping. Through seamless integration with trusted carriers, automated customs management, and end-to-end tracking, ShipLink simplifies the entire shipping process.
 
-Currently, two official plugins are available:
+Our community-centric approach means ShipLink continuously evolves with the needs of sellers, offering intuitive tools, shared best practices, and a collaborative space where users can exchange insights and strategies. Powered by AWS, ShipLink delivers secure and scalable solutions, ensuring that sellers of all sizes can reach customers worldwide with confidence.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Overview
 
-- Configure the top-level `parserOptions` property like this:
+This project includes:
+- A **frontend** built with [React](https://reactjs.org/) using [Vite](https://vitejs.dev/) and TypeScript.
+- A **backend** built with [Express](https://expressjs.com/).
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Live Demo
+
+The application is hosted at: [https://d3kmlzaawejcqu.cloudfront.net](https://d3kmlzaawejcqu.cloudfront.net) 
+
+---
+
+## Installation
+
+### Prerequisites
+
+- Node.js (v16+ recommended)
+- npm 
+- Git
+
+### Clone the Repository
+
+Clone the repository to your local machine:
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd ShipLink
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Frontend Setup
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Navigate to the `frontend` directory:
+   ```bash
+   cd frontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### Backend Setup
+
+1. Navigate to `backend` directory:
+   ```bash
+   cd backend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+## Running the application
+### Starting the Frontend
+
+```bash
+cd frontend
+npm run dev
 ```
+The frontend will be hosted on [http://localhost:5173](http://localhost:5173). 
+Check for terminal logs if the PORT changes.
+
+### Starting the Backend
+
+```bash
+cd backend
+npm run dev
+```
+
