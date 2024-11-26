@@ -37,7 +37,7 @@ const carrierSchema = new mongoose.Schema({
     insurance: { type: String, required: true },
     rating: { type: Number, required: true },
     specialHandling: { type: [String], required: true },
-    logo: { type: String, required: true }, // Represents the URL to the company logo
+    logo: { type: String, required: true }, 
   });
 
 
@@ -285,7 +285,7 @@ app.post('/api/createShiplink', async (req, res) => {
 app.get('/api/getAllShiplink', async (req, res) => {
     try {
         // Fetch all Shiplink objects from the collection
-        const shiplinkObjects = await CreateShiplinkObject.find();
+        const shiplinkObjects = await CreateShiplinkObject.find({});
 
         // Return the retrieved data as JSON
         res.status(200).json({
@@ -339,7 +339,7 @@ app.get('/api/getShiplink', async (req, res) => {
 
 
 
-const PORT = 3000;
+const PORT = 80;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
